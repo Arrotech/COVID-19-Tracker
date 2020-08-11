@@ -6,6 +6,16 @@ body {
     background: #f8f8f8;
 }
 
+.app {
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.app__left {
+    flex: 0.9;
+}
+
 .app__header {
     display: flex;
     align-items: center;
@@ -16,4 +26,10 @@ body {
 .app__stats {
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 990px) {
+    .app {
+        flex-direction: column;
+    }
 }
