@@ -16,7 +16,15 @@ function App() {
 	const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
 	const [mapZoom, setMapZoom] = useState(3);
 	const [mapCountries, setMapCountries] = useState([]);
-	const [casesType, setCasesType] = useState('cases');
+  const [casesType, setCasesType] = useState('cases');
+  
+  const dropdownMenuProps={
+  menuStyle:{
+    border: "1px solid black",
+    borderRadius: "5%",
+    backgroundColor: 'lightgrey',
+  },
+}
 
 	useEffect(() => {
 		fetch('https://disease.sh/v3/covid-19/all')
@@ -69,15 +77,18 @@ function App() {
 		<div className="app">
 			<div className="app__left">
 				<div className="app__header">
-					<h1>COVID-19 TRACKER</h1>
+          <h1>COVID-19 TRACKER</h1>
+          <div className="app__dropdownWrapper">
+          <h4 className="app__dropdownTitle">Select County --</h4>
 					<FormControl className="app__dropdown">
-						<Select variant="outlined" onChange={onCountryChange} value={country}>
+						<Select className="app__dropdownItem" variant="outlined" onChange={onCountryChange} value={country}>
 							<MenuItem value="worldwide">Worldwide</MenuItem>
 							{countries.map((country) => (
 								<MenuItem value={country.value}>{country.name}</MenuItem>
 							))}
 						</Select>
 					</FormControl>
+          </div>
 				</div>
 				<div className="app__stats">
 					<InfoBox

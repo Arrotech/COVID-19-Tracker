@@ -3,7 +3,7 @@
 }
 
 body {
-    background: #f8f8f8;
+    background: #000000;
 }
 
 .app {
@@ -12,8 +12,28 @@ body {
     justify-content: space-evenly;
 }
 
+.app__dropdownWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.app__dropdownTitle {
+    margin-bottom: 10px;
+    color: #f8f8f8;
+}
+
+.app__dropdownItem {
+    height: 30px;
+}
+
 .app__dropdown {
     background-color: white;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 .app__left {
@@ -60,5 +80,8 @@ body {
 @media (max-width: 990px) {
     .app {
         flex-direction: column;
+    }
+    .app__left {
+        margin-bottom: 20px;
     }
 }
